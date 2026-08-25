@@ -15,10 +15,10 @@ st.set_page_config(page_title="Fraud Detection XAI", layout="wide")
 # Load models & Data
 # ---------------------------
 # Note: Ensure these files exist in your local directory
-rf_model = joblib.load("rf_model.pkl")
-scaler = joblib.load("scaler.pkl")
-columns = joblib.load("columns.pkl")
-sample_data_original = joblib.load("sample_data_original.pkl")
+rf_model = joblib.load("models/rf_model.pkl")
+scaler = joblib.load("models/scaler.pkl")
+columns = joblib.load("models/columns.pkl")
+sample_data_original = joblib.load("models/sample_data_original.pkl")
 
 # Convert to DataFrame and sync columns
 sample_data_original = pd.DataFrame(sample_data_original, columns=columns)
