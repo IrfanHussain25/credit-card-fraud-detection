@@ -5,6 +5,10 @@ import joblib
 import shap
 import matplotlib.pyplot as plt
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------------------
 # Page Config
@@ -27,7 +31,7 @@ sample_data_original = sample_data_original.iloc[:100].reset_index(drop=True)
 # ---------------------------
 # Gemini API
 # ---------------------------
-genai.configure(api_key=st.secrets["API_KEY"]) # Replace with your key
+genai.configure(api_key=os.getenv("API_KEY")) # Replace with your key
 gemini_model = genai.GenerativeModel("gemini-2.5-flash")
 
 # ---------------------------
